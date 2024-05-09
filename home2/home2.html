@@ -1,0 +1,341 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="home2.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bungee+Inline&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<header>
+    <nav>
+        <div class="bgcc" style="background-color: rgb(104, 104, 104); height: 100px;">
+            <div class="container-fluid justify-content-between navbar mt-1 ">
+                <div class="icon">
+                    <img src="./Black_And_Beige__Minimalist_Aesthetic_Modern_Simple_Typography_Salt_Logo[1].svg" alt="" width="140px" style="margin-top:-45px;">
+                </div>
+                <div class="links" style="margin-top:-10px;">
+                    <a href="" class="pd">Home</a>
+                    <a href="" class="pd" id="explore-link">Explore</a>
+            <ul class="ex material-icons dropdown-icon" id="explore-dropdown">
+                <li style="background-color: #C39126; color: white;">Categories</li>
+                <li><a href="">Historical sites</a></li>
+                <li><a href="">Museums & Exhibitions</a></li>
+                <li><a href="">Hotels & Resorts</a></li>
+                <li><a href="">Vibes & Restaurants</a></li>
+            </ul>
+            <a href="" class="pd">How it Works</a>
+            <a href="" class="pd" id="contact-link">Contact</a>
+            <ul class="exx material-icons dropdown-icon" id="dropdown">
+                <li class="ph"><i class="fas fa-phone"></i>+201004047028</li>
+                <li class="em"><i class="far fa-envelope"></i> <a href="mailto:norhanswidan0@gmail.com">egyptour.team.eg@gmail.com</a></li>
+            </ul>
+            <a href="about.html" class="pd">About Us</a>
+        </div>
+        <button class="b justify-content-end"><i class="fa fa-heart fa-xl"style="color: white; "></i></button>
+        <button style="margin-left:-100px;" class="b justify-content-end" onclick="toggleMenu()">
+            <i  class="fa-solid fa-circle-user fa-xl"></i>
+        </button> 
+            <div class="sub-menu-wrap" id="submenu">
+                <div class="sub-menu">
+                    <div class="user-info" id="user-info">
+                        <img src="./images.jpg" class="rounded-circle" id="user-image" >
+                        <!-- <img src="images.jpg" class="rounded-circle" id="user-image"> -->
+                        <p id="user-name"></p>
+                        <p id="user-email"></p>
+                        <hr>
+                    </div> 
+                            <div class="link" style="background-color:white;">
+                                <a href="person.html" style="text-decoration: none;"><button><i class="fa-regular fa-circle-user me-8"></i><p>General information</p>
+                                </button></a>
+                                <a href="security.html" style="text-decoration: none;"><button><i class="fa-solid fa-shield"></i><p>Security</p></button></a>
+                                <button class="view-modal" onclick="togglePopup()"><i class="fa-solid fa-share-nodes"></i><p>Invite a friend</p></button>
+                                <div class="popup">
+                                    <header>
+                                      <span style="margin-left: 140px;">Share</span>
+                                      <div class="close">
+                                          <i class="fa-solid fa-x" style="margin-left: 3px;"></i>
+                                        </div>
+                                    </header>
+                                    <div class="content">
+                                        <p style="margin-left: -3px;">Invite friend via</p>
+                                        <ul class="icons">
+                                            <a href="#" id="facebook-link"><i class="fab fa-facebook-f"></i></a>
+                                            <a href="#" id="twitter-link"><i class="fab fa-twitter"></i></a>
+                                            <a href="#" id="email-link"><i class="fa-solid fa-envelope"></i></a>
+                                            <a href="#" id="whatsapp-link"><i class="fab fa-whatsapp"></i></a>
+                                            <a href="#" id="telegram-link"><i class="fab fa-telegram-plane"></i></a>
+                                        </ul>                                                
+                                        <p style=" text-align: center;">or copy link</p>
+                                        <div class="field">
+                                         <i class="fa-regular fa-copy"></i>
+                                          <input type="text" readonly value="share-link" s>
+                                          <button>Copy</button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                <button onclick="goToPage('down.html')"><i class="fa-brands fa-google-play"></i><p>Download app</p></button>
+                                <button onclick="openRatingBox()"><i style="left:-4px" class="fa-regular fa-star"></i><p>Rate us</p></button>
+                                <div id="ratingBox" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #fff; padding: 20px; border: 2px solid #ccc; box-shadow: 0 0 10px rgba(0,0,0,0.5); z-index: 9999;">
+                                    <h4 style="color: #C39126; margin-bottom: -10px;">Please Rate Us</h4>
+                                    <div class="rating">
+                                        <input type="radio" id="star5" name="rating" value="5" onclick="saveRating(this)">
+                                        <label for="star5"></label>
+                                        <input type="radio" id="star4" name="rating" value="4" onclick="saveRating(this)">
+                                        <label for="star4"></label>
+                                        <input type="radio" id="star3" name="rating" value="3" onclick="saveRating(this)">
+                                        <label for="star3"></label>
+                                        <input type="radio" id="star2" name="rating" value="2" onclick="saveRating(this)">
+                                        <label for="star2"></label>
+                                        <input type="radio" id="star1" name="rating" value="1" onclick="saveRating(this)">
+                                        <label for="star1"></label>
+                                    </div>
+                                    <button onclick="closeRatingBox()" style="color: white; width:70px; background-color: #C39126; border-radius: 10px;">Close</button>
+                                </div>
+                               <a href="about.html"></a> <button><i style="margin-left:3px;" class="fa-solid fa-exclamation"></i><p style="margin-left:12px;">About us</p></button>
+                                <hr>
+                             <button id="signOutButton"><p style="margin-right: 10px;">Sign Out</p><i class="fa-solid fa-right-from-bracket"></i></button>
+                            </div>
+                        </div>
+                    </div>
+            <a href="" class="b d-flex justify-content-end" style="margin-left:-100px;"><i class="fa-regular fa-circle-question fa-xl" style="color: white;"></i></a>
+
+        </div>
+    </div>
+    </div>
+
+</nav>
+</header>
+
+<div class="ll">
+    <h5>HABEBY..COME TO EGYPT</h5>
+<h6 style="color: white; font-size: 20px; margin-left: 80px; margin-top: -80px;">Find your Wonderlust With us.</h6>
+</div>
+<body>
+    <div class="navbar">
+        
+<h2 style="color: #C39126;margin-left: 60px;"><strong>Browse your journey</strong></h2>
+<style>
+    .search-box input{
+ background-color:#C39126;
+ font-style: normal;
+ font-size: 100%;
+ color: white;
+ width: 26%;
+ border-radius: 80px;
+ padding: 15px;
+ text-align: start; 
+ color: white;
+ position: absolute; 
+ left: 870px;
+ bottom: -130px;
+ height: 40px;
+ 
+ }
+ .search-box:focus{
+ box-shadow: none;
+ border: none;
+ }
+ </style>
+ <div class="container search-box">
+ <div class="row d-flex justify-content-between">
+ <div class="col-md-6">
+ <div class="form">
+ <input type="text"  style="color: #1d1402; margin-left: 100px;" class="form-control form-input" placeholder="search">
+ </div>
+ </div>
+ </div>
+  </div>
+ </div>
+ <style>
+    .btn-primary{
+background-color: #C39126;
+text-align: center;
+color: white;
+border-color: #C39126;
+border-radius: 20px;
+width: 100px;
+height: 40px;
+margin-left: 120px;
+    }
+ </style>
+ <div class="container">
+    <div class="card__container">
+       <article class="card__article">
+          <img src="https://www.egypttoursportal.com/images/2017/11/Cairo-City-Egypt-Tours-Portal-1-e1511901150793.jpg" class="card-img-top" alt="..." alt="image" class="card__img">
+          <div class="mb-5 d-flex justify-content-around">
+       <br><br>
+            <button class="btn btn-primary">Cario </button>
+        </div>
+       </article>
+       <article class="card__article">
+        <img src="https://erlebnis-aegypten.de/img/ausfluege/alexandria.png" style="height: 320px;" class="card-img-top" alt="..." alt="image" class="card__img ">
+        <div class="mb-5 d-flex justify-content-around">
+            <br><br>
+                 <button style="margin-left: 150px;"class="btn btn-primary">Alexandria</button>
+             </div>
+     </article>
+     <article class="card__article">
+          <img src="https://desertadventuresegypt.com/wp-content/uploads/2023/06/Wadi-El-Rayan-Waterfalls-Fayoum-e1687194518272.jpg" style="height: 320px;"   alt="image" class="card__img">
+          <div class="mb-5 d-flex justify-content-around">
+            <br><br>
+                 <button  style="margin-left: 150px;"class="btn btn-primary">Faiyum </button>
+             </div>
+       </article>
+       <article class="card__article">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/94/Port_said_egypt_%286%29.JPG" style="height: 320px;"   alt="image" class="card__img">
+        <div class="mb-5 d-flex justify-content-around">
+          <br><br>
+               <button class="btn btn-primary">Portsaid </button>
+           </div>
+     </article>
+     <article class="card__article">
+        <img src="https://www.cleopatraegypttours.com/wp-content/uploads/2020/03/Luxor-Egypt.jpg" style="height: 320px;"   alt="image" class="card__img">
+        <div class="mb-5 d-flex justify-content-around">
+          <br><br>
+               <button style="margin-left: 150px;" class="btn btn-primary">Luxor</button>
+           </div>
+     </article>
+     <article class="card__article">
+        <img src="https://static.wixstatic.com/media/5eff48_dea8be1eae8c49ea95e8a08ea3197d1f~mv2_d_3264_2448_s_4_2.jpg/v1/fill/w_640,h_480,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/5eff48_dea8be1eae8c49ea95e8a08ea3197d1f~mv2_d_3264_2448_s_4_2.jpg" style="height: 320px;"   alt="image" class="card__img">
+        <div class="mb-5 d-flex justify-content-around">
+          <br><br>
+               <button style="margin-left: 150px;" class="btn btn-primary">Aswan</button>
+           </div>
+     </article>
+  </div>
+</div>
+<br><br>
+<style>
+    .h2{
+
+      color: #C39126;
+    }
+    .h5{
+        color: #C39126;
+    }
+</style>
+<div class="doha">
+<body>
+<h2 style="color: #C39126; margin-top: 200px; padding: 15px; padding-left: 20px;font-size: 40px;">&nbsp;&nbsp;&nbsp;
+    &nbsp;Become VIp!</h2>
+<h5 style="color: #C39126;margin-top: -30px;padding-left: 30px; font-size: 20px;">Enjoy priority access to new products, services,<br>
+    and events before they are made available to the<br>&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;general public.</h5></div>
+<br>
+<button style="font-weight: bold; color:white;background-color: #C39126;border-radius: 19px; border: #C39126;height: 30px;width: 130px; margin-left: 112px; position: absolute; bottom: -1240px;">Upgrade now!</button>
+<style>
+h5{
+color: #C39126;
+
+}
+</style>
+&nbsp;&nbsp;&nbsp;
+&nbsp;
+
+<style>
+.img_dog{
+float: right;
+width: 35%;
+height: 30%;
+}
+.pos_cen{
+position: absolute;
+width: 60%;
+left: 40%;
+top: 260%;
+}
+</style>
+<div class="pos_cen">
+<img style="margin-top:13px;" class="img_dog" src="c:\Users\ELKHOLY\OneDrive\Desktop\test\Discount-cuate.png">
+</div>
+</div>
+</div>
+</div>
+<br>
+<style>
+    .dodo{
+        background-color: #C39126;
+    color: white;
+text-align: center;
+
+    }
+    .ddd{
+        float: left;
+        width: 20%;
+        position: absolute;
+        top: 300%;
+        right: 80%;
+    }
+    
+    .subscribe{
+        color: white;
+        text-align: center;
+        background-color: #544017;
+        border-radius: 12px;
+        border-color: black;
+        width:150px;
+        display: flex;
+        text-decoration:#C39126;
+display: inline-block;
+cursor: pointer;
+padding: 15px 30px;
+font-size: 15px;
+}
+</style>
+<div class="dodo">
+<img class="ddd" src="c:\Users\ELKHOLY\OneDrive\Desktop\test\Saved Pictures\Sunny day-cuate.png" width="250px">
+<h1>Customized Experierces</h1>
+<h3 style="color: white;">Tailor your experience With us according to your preferences<br>
+and interests, ensuring that every interaction with our brand <br>is personalized and memorable</h3>
+<br>
+<button class="subscribe" style="width:180px;">Subscribe<span> Now</span></button>
+<br><br><br><br>
+</div>
+<div class="container" style="text-align: center;">
+    <img src="./Black_And_Beige__Minimalist_Aesthetic_Modern_Simple_Typography_Salt_Logo[1].svg" alt="" width="170px" style="position: absolute; top: 340%;"  >
+    <br>
+    <ul style="margin-left:10%;padding: 7px;
+    text-decoration: none;
+    color: #C39126;
+    font-weight: 900;
+    font-size: 30px;
+    margin-left: 20px;
+    position: relative;
+    right: 100px;
+    padding: 10px;
+      list-style: none;
+      margin-top: 380px;
+      display: flex;
+      margin-left: 15%;
+      text-decoration: none;
+      ;">
+            <li> <a style="color: #C39126; padding: 20px; background-color: white; text-decoration: none;" href="" class="ligh">Home</a></li>
+            <li> <a style="color: #C39126; padding: 20px; background-color: white; text-decoration: none;"href="" class="ligh">Ask a question</a></li>
+            <li> <a style="color: #C39126; background-color: white; text-decoration: none;" href="" class="ligh">About Us</a></li>
+        </ul>
+       <h3  style="color: #C39126; position: absolute; top: 2330px;">For better experience, downlosd our mobile app</h3>
+        <br>
+        <h3 style="color: #C39126;position: absolute; top: 2365px;">Download the app by clicking the link below :</h3>
+        <div class="parent d-flex justify-content-center">
+            <div class="child1">
+                <img src="C:\Users\ELKHOLY\OneDrive\Desktop\Saved Pictures\WhatsApp Image 2024-04-08 at 02.17.18_fa38d6fb.jpg"
+                 alt="" width="150px" style="position: absolute; top: 2440px; right: 650px;">
+                    <img src="C:\Users\ELKHOLY\OneDrive\Desktop\Saved Pictures\WhatsApp Image 2024-04-08 at 02.17.16_c29f5b0b.jpg" alt="" width="150px" style="position: absolute; right: 500px; bottom:-1850px;">
+                </div>
+            </div>
+            <hr width="60%" style="margin-left: 25%; margin-top: 135px;">
+            <p style="color: #C39126; margin-top:9px; margin-left: 40px;">All copyrights are reserved by 2024 seniors</p>
+
+    <script src="home2.js"></script>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+</body>
+</html>
